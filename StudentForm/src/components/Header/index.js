@@ -13,7 +13,7 @@ const Header = () => (
           </Link>
         </li>
         <li>
-          <Link to="/about" className="nav-link">
+          <Link to="/studentform" className="nav-link">
             StudentForm
           </Link>
         </li>

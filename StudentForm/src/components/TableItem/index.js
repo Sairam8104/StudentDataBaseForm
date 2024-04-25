@@ -12,19 +12,17 @@ const TableItem = props => {
     State,
     Address,
   } = tableData
-  console.log(tableData)
+  console.log((StudentID))
   return (
     <tr>
       <td>
         <Link
-          to={{
-            pathname: '/about',
-            state: {StudentID},
-          }}
+          to={`/studentform/${StudentID}`} studentid={StudentID}
           className="item-link"
         >
           {StudentID}
         </Link>
+        
       </td>
       <td>{Name}</td>
 
@@ -37,4 +35,4 @@ const TableItem = props => {
   )
 }
 
-export default TableItem
+export default TableItem;

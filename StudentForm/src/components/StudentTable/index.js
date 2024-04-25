@@ -19,27 +19,45 @@ class StudentTable extends Component {
     const {searchInput} = this.state
 
     if (searchInput === '') {
+        try {
+            const apiUrl = `http://localhost:3005/student`;
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const data = await response.json(); // Extract JSON data from the response
+            console.log(data.length)
+            const formattedData = data.map(eachItem => ({
+              Name: eachItem.Name,
+              StudentID: eachItem.StudentID,
+              StudentCourse: eachItem.StudentCourse,
+              StudentYear: eachItem.StudentYear,
+              State: eachItem.State,
+              Address: eachItem.Address,
+            }))
+            console.log(formattedData)
+            this.setState({tableData: formattedData, isLoading: false});
+          } catch (error) {
+            console.error("Error fetching data:", error);
+          }
       
-      const apiUrl = `/student/:StudentId/`
-      const response = await fetch(apiUrl)
-
-      const data = await response.json()
-      const formattedData = data.map(eachItem => ({
-        Name: eachItem.Name,
-        StudentID: eachItem.StudentID,
-        StudentCourse: eachItem.StudentCourse,
-        StudentYear: eachItem.StudentYear,
-        State: eachItem.State,
-        Address: eachItem.Address,
-      }))
-      this.setState({tableData: formattedData, isLoading: false})
     } else {
-      const apiUrl = `https://studentdatabase-production-3a0c.up.railway.app/Student/${searchInput}`
-      const response = await fetch(apiUrl)
-      const SearchedData = await response.json()
-      let newArray = []
-      newArray = [...newArray, SearchedData]
-      this.setState({tableData: newArray, isLoading: false})
+
+      try {
+        const apiUrl = `http://localhost:3005/student/${searchInput}`;
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const SearchedData = await response.json()
+        console.log(SearchedData.length)
+
+        
+        this.setState({tableData: SearchedData, isLoading: false})
+      } catch (error) {
+        console.log(error)
+        console.error("Error fetching data:", error);
+      }
     }
   }
 
@@ -53,7 +71,7 @@ class StudentTable extends Component {
 
   render() {
     const {isLoading, tableData, searchInput} = this.state
-
+    
     return (
       <div className="blog-list-container">
         {isLoading ? (
@@ -78,6 +96,7 @@ class StudentTable extends Component {
               </thead>
               <tbody>
                 {tableData.map(item => (
+                
                   <TableItem tableData={item} key={item.StudentID} />
                 ))}
               </tbody>
@@ -88,4 +107,4 @@ class StudentTable extends Component {
     )
   }
 }
-export default StudentTable
+export default StudentTable;

@@ -1,0 +1,242 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .heading {
+    color: #ea580c;
+    font-family: 'roboto';
+    font-weight: 800px;
+    font-size: 32px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 16px 0px #bfbfbf;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .text-label {
+    font-size: 10px;
+    font-family: 'roboto';
+    color: #475569;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  .Full-Name-Container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .input-element {
+    width: 90%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #9aa5b1;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  
+  .input-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+  
+  .input-container-three {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  
+  .input-container-address {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+  
+  .error-message {
+    margin-top: 5px;
+    padding-top: 0px;
+    color: #ff0b37;
+    font-family: 'roboto';
+    font-size: 10px;
+    align-self: flex-start;
+  }
+  
+  .text-label:hover ~ .input-element {
+    background-color: #66ccff;
+  }
+  
+  .error-highlight {
+    background-color: #fef2f4;
+    border: 1px solid #ff0b37;
+    margin-bottom: 0px;
+  }
+  
+  .submit-btn {
+    background-color: #ea580c;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: 'roboto';
+    width: 10%;
+    height: 35px;
+  }
+  
+  .checkbox {
+    width: 90%;
+  
+    cursor: pointer;
+    border: 1px solid #9aa5b1;
+    color: #000000;
+    margin-bottom: 10px;
+    width: 20px;
+  }
+  
+  .input-container-check {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+  
+  .check-label {
+    font-size: 12px;
+    font-family: 'roboto';
+    color: #2b3645;
+    font-weight: 600;
+  
+    margin-bottom: 10px;
+    width: 100px;
+  }
+  
+  @media (max-width: 586px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 16px 0px #bfbfbf;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  
+    .input-container-three {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0px;
+      margin-bottom: 15px;
+      margin-right: 20px;
+    }
+  
+    .Full-Name-Container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+    .text-label {
+      font-size: 6px;
+      font-family: 'roboto';
+      color: #2b3645;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+  
+    .input-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0px;
+      margin-right: 10px;
+      margin-bottom: 15px;
+    }
+    .input-element {
+      width: 90%;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-left: 6px;
+      outline: none;
+      cursor: pointer;
+      border: 1px solid #9aa5b1;
+      color: #000000;
+      margin-bottom: 10px;
+      font-size: 8px;
+    }
+    .input-container-address {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0px;
+      margin-right: 10px;
+      margin-bottom: 15px;
+    }
+    .submit-btn {
+      background-color: #ea580c;
+      outline: none;
+      border: none;
+      border-radius: 6px;
+      color: #ffffff;
+      font-family: 'roboto';
+      width: 100%;
+      height: 35px;
+    }
+    .input-container-check {
+      width: 20%;
+      display: flex;
+      flex-direction: row;
+  
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+  
+    .check-label {
+      font-size: 8px;
+      font-family: 'roboto';
+      color: #2b3645;
+      font-weight: 600;
+      margin-top: 5px;
+      margin-bottom: 0px;
+      width: 100px;
+    }
+    .checkbox {
+      width: 90%;
+  
+      cursor: pointer;
+      border: 1px solid #9aa5b1;
+      color: #000000;
+      margin-bottom: 10px;
+      width: 20px;
+    }
+  }

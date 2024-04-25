@@ -26,4 +26,4 @@ const FilterData = props => {
   )
 }
 
-export default FilterData
+export default FilterData;

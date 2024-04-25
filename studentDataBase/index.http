@@ -1,0 +1,14 @@
+###
+GET http://localhost:3005/student
+
+###
+
+GET http://localhost:3005/student/Sai
+
+
+
+###
+
+GET http://localhost:3005/student/448547847 
+
+
